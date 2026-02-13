@@ -40,24 +40,24 @@ app.patch('/user/:id',(req, res) => {
     let id = req.params.id;
     let updateUser = req.body;
     //หา user จาก id ที่ส่งมา
-    let selectedIndex = users.findIndex(user => user.id == id);
+    let selectIndex = users.findIndex(user => user.id == id);
     
     
     //อัพเดตข้อมูล users
-    users[selectedIndex].firstname = updateUser.firstname || users[selectedIndex].firstname;
-    users[selectedIndex].lastname = updateUser.lastname || users[selectedIndex].lastname;
+    users[selectIndex].firstname = updateUser.firstname || users[selectIndex].firstname;
+    users[selectIndex].lastname = updateUser.lastname || users[selectIndex].lastname;
     if (updateUser.firstname) {
-        users[selectedIndex].firstname = updateUser.firstname;
+        users[selectIndex].firstname = updateUser.firstname;
     }
     if (updateUser.lastname) {
-        users[selectedIndex].lastname = updateUser.lastname;
+        users[selectIndex].lastname = updateUser.lastname;
     }
 
     res.json({
         message: 'User updated successfully',
         data: {
             user: updateUser,
-            indexUpdate: selectedIndex
+            indexUpdate: selectIndex
         }
           
     });
@@ -66,12 +66,12 @@ app.patch('/user/:id',(req, res) => {
 
 app.delete('/user/:id',(req,res) => {
     let id =req.params.id;
-      let selectedIndex = users.findIndex(user => user.id == id);
+      let selectIndex = users.findIndex(user => user.id == id);
     
-    delete users[selectedIndex];
+    delete users[selectIndex];
     res.json({
         message:'User deleted succeddfully',
-        indexDelete: selectedIndex
+        indexDelete: selectIndex
     });
 })
 
