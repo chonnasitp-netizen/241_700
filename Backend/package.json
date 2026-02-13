@@ -8,10 +8,13 @@
   "main": "Index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
+<<<<<<< HEAD
   },
   "dependencies": {
     "body-parser": "^2.2.2",
     "express": "^5.2.1",
     "nodemon": "^3.1.11"
+=======
+>>>>>>> 46038cbd6f4c5a9f3229e24d3c53b33949574ba2
   }
 }
