@@ -6,6 +6,26 @@ const port = 8000;
 
 app.use(bodyParser.json());
 
+const port = 8000;
+
+app.get('/testdb', (req, res) =>{
+    mysql.createConnection({
+        host: 'localhost',
+        user: 'root',
+        password: 'root',
+        databast: 'webdb',
+        pory:8700
+    }).then((conn)=>{
+        conn
+        .queny('SELECT * FROM users')
+        .then((results)=>{
+            res.json(results[0]);
+        }).catch((err)=> {
+            res.json({error:err.message});
+        });
+    })
+})
+
 let users = [];
 let counter = 1;
 
