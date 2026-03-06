@@ -1,0 +1,58 @@
+<<<<<<< HEAD
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+   <input type = "radio" name="gender" value="male" onchange="changeGender()"> Male
+   <input type = "radio" name="gender" value="female" onchange="changeGender()" > Female 
+   //สร้างชื่อฟั่งชั้นเท่านั้น 
+    <script>
+        function changeGender(){
+            //เลือก gender ทั้งหมด
+            let genders = document.querySelectorAll('input[name="gender"]');
+
+
+            //ดุว่าอันไหนมันเช็ก
+            for (let i = 0;i < genders.length;i++){
+                if(genders[i].checked){
+                    console.log("Gender selected: "+genders[i].value);
+                }
+            }
+        }
+     
+    </script>
+</body>
+=======
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+   <input type = "radio" name="gender" value="male" onchange="changeGender()"> Male
+   <input type = "radio" name="gender" value="female" onchange="changeGender()" > Female 
+   //สร้างชื่อฟั่งชั้นเท่านั้น 
+    <script>
+        function changeGender(){
+            //เลือก gender ทั้งหมด
+            let genders = document.querySelectorAll('input[name="gender"]');
+
+
+            //ดุว่าอันไหนมันเช็ก
+            for (let i = 0;i < genders.length;i++){
+                if(genders[i].checked){
+                    console.log("Gender selected: "+genders[i].value);
+                }
+            }
+        }
+     
+    </script>
+</body>
+>>>>>>> 46038cbd6f4c5a9f3229e24d3c53b33949574ba2
+</html>
