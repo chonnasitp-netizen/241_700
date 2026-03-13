@@ -88,6 +88,7 @@ const submitData = async () => {
 }
 */
 
+
 const validateData = (userData) => {
     let errors = [];
     if (!userData.firstName) {
@@ -129,6 +130,14 @@ const submitData = async () => {
             }
         }
 
+        //const errors = validateData(user);
+        //if (errors.length > 0){
+        //    throw {
+        //        message :  'กรุณากรอกข้อมูลให้ครอบถ้วน' ,
+        //        errors : errors
+        //    }
+        //}
+
         let userData = {
             firstName: firstnameDOM.value, //get value 
             lastName: lastnameDOM.value,
@@ -154,17 +163,21 @@ const submitData = async () => {
     } catch (error) {
         console.log('error message', error.message);
         console.log('error', error.errors);
-        //if (error.response) {
-        //    console.error('Error response:', error.response.data.message);
-        //}
+
+        if (error.response) {
+            console.error('Error response:', error.response.data.message);
+            error.message = error.response.data.message
+            error.errors = error.response.data.errors
+        }
+
         let htmlData = '<div>'
         htmlData += `<div>${error.message}</div>`;
         htmlData += '<ul>'
         for (let i = 0; i < error.errors.length; i++) {
             htmlData += `<li>${error.errors[i]}</li>`;
         }
-        htmlData += '</ul>'
-        htmlData += '</div>'
+        htmlData += '</ul>';
+        htmlData += '</div>';
 
         messageDOM.innerHTML = htmlData;
         messageDOM.className = "message danger";
