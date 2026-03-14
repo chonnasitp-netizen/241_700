@@ -15,10 +15,10 @@ const loadData = async () => {
         let user = response.data[i];
         htmlData += ` <div>
         ${user.firstname} ${user.lastname} 
-        <button>Edit</button>
+        <a href ="index.html?id=${user.id}"><button>Edit</button></a>
         <button class='delete' data-id='${user.id}'>Delete</button>
         </div>`
-    }
+    } // edit แล้วต้องกลับไปที่หน้าเพิ่มข้อมูล เราต้องการแก้ข้อมูลจะต่อuil แบบ 
     htmlData += '</div>';
     userDOM.innerHTML = htmlData;
 
