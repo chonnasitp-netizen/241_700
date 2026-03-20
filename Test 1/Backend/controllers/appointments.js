@@ -1,1 +1,0 @@
-const ProjectModel = require('../models/projects')
